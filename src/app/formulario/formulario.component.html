@@ -1,0 +1,16 @@
+<!-- <form (ngSubmit)="referenciaLocal.form.valid && agregarValor()" #referenciaLocal="ngForm"> Se crea una referencia local #, luego en el metodo ngSubmit(valida los datos enviados por el formulario y llama a la funcion que los procesa), en este caso se llama a la referencia local # y se valida si el formulario es valido, es decir si cumple con los required del formulario -->
+<form (ngSubmit)="agregarValor()" #referenciaLocal="ngForm"> <!--Se crea una referencia local # que toma y procesa si el formulario es o no valido(comple con los rquired), luego se accede desde el typescript con @ViewChild para ver si es valido, se recupera el submit con ngSubmit y se procesa, mandando los datos al typescript-->
+    <div class="agregar">
+        <div class="agregar_contenedor">
+            <select (change)="tipoOperacion($event)" class="agregar_tipo" [ngClass]="{redfocus: tipo==='egreso' }"> <!--Similar a clase css, a diferencia de que es un arreglo que contiene la clase que un boolean que aplica o no si  sucede algo o no algo,en este caso aplica clase si el atributo tipo es igual a "egreso", aplica la clase redfocus-->
+                <option value="ingreso" selected>+</option>
+                <option value="egreso">-</option>
+            </select>
+            <input  type="text" class="agregar_descripcion" placeholder="Agregar Descripción" name="descripcionInput" [(ngModel)] ="descripcionInput" [ngClass]="{redfocus: tipo==='egreso' }" required="">
+            <input type="number" class="agregar_valor" placeholder="Valor" name="valorInput" [(ngModel)] ="valorInput" [ngClass]="{redfocus: tipo==='egreso' }" required>
+            <button type="submit" class="agregar_btn"><i class="ion-ios-checkmark-outline" [ngClass]="{red: tipo==='egreso'}"></i></button>
+        </div>
+    </div>
+</form>
+  
+  

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "personasbd-36825": {
+      "hosting": {
+        "presupuesto-app": [
+          "personasbd-36825"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "personasbd-36825"
+  }
+}
